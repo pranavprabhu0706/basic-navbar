@@ -1,0 +1,40 @@
+.p-menubar {
+  background-color: transparent !important;
+  border-radius: 40px;
+  border-color: grey;
+}
+
+/* Shift all menu items to the right */
+.p-menubar-root-list {
+  margin-left: auto;
+  margin-right: 3rem;
+}
+
+/* Text color on hover */
+.p-menuitem-link:hover span {
+  color: #007bff !important;
+}
+
+.p-menuitem{
+  margin-right: 5px;
+}
+
+/* Font & color */
+body, .p-menubar, .p-menuitem, .p-menuitem-link, .p-menubar-root-list {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+*{
+  color: black;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Logo styling */
+.img-class {
+  cursor: pointer;
+  height: 2rem;
+  margin-left: 4rem;
+  margin-right: 1rem;
+}
