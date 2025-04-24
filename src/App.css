@@ -2,34 +2,53 @@
   color: black;
   background-color: transparent;
   box-shadow: none;
+  margin: 0;
 }
 
-.p-menubar {
-  background-color: transparent !important;
-  border-radius: 40px;
-  border-color: grey;
+.p-menubar{
   padding: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: 0;
 }
 
-/* Shift all menu items to the right */
-.p-menubar-root-list {
-  margin-left: auto;
+.img-class{
+  width:100%;
+  max-width: 7rem;
+  margin-left: 20%;
+  padding: .5rem;
 }
 
-/* Text color on hover */
-.p-menuitem-link:hover span {
-  color: #007bff !important;
+.menu-wrapper{
+  border-radius: 50px;
+  background-color: #e2e0df;
+  margin-top: .6rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-/* Font & color */
-body, .p-menubar, .p-menuitem, .p-menuitem-link, .p-menubar-root-list {
-  font-family: Arial, Helvetica, sans-serif;
+.mx-2, .p-menuitem-link, .p-icon, .p-submenu-icon{
+  font-size: 1rem;
   font-weight: 600;
 }
 
-/* Logo styling */
-.img-class {
-  cursor: pointer;
-  margin-left: 4rem;
-  height: 2rem;
+.p-menuitem-text{
+  border-radius: 6px;
+}
+
+.mx-2:hover{
+  color: #222588;
+}
+
+.p-menuitem-text:hover{
+  color: #222588;
+}
+
+.p-icon:hover{
+  color: #222588;
+} 
+
+.p-submenu-icon:hover{
+  color: #222588;
 }
