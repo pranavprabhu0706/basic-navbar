@@ -8,7 +8,6 @@ export default function TemplateDemo() {
   const itemRenderer = (item) => (
     <a className="flex align-items-center p-menuitem-link">
       <span className="mx-2">{item.label}</span>
-      {item.shortcut && <span className="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{item.shortcut}</span>}
     </a>
   );
   const items = [
