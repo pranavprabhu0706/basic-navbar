@@ -12,7 +12,7 @@
     justify-content: space-between;
     border: 0;
   }
-  
+
   .img-class{
     width:100%;
     max-width: 7rem;
@@ -27,7 +27,25 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
+  .p-menuitem .p-submenu-list {
+    background-color: #007bff; /* Blue box */
+    padding: 0.5rem 0; /* optional - padding inside */
+    border-radius: 0.5rem; /* optional - smooth corners */
+  }
   
+  /* Style each item inside the dropdown */
+  .p-submenu-list .p-menuitem-link {
+    color: black; /* black text */
+    font-weight: 500;
+  }
+  
+  /* Hover effect for submenu items */
+  .p-submenu-list .p-menuitem-link:hover {
+    background-color: #0056b3; /* darker blue when hover */
+    color: white; /* text becomes white when hover */
+  }
+
   .mx-2, .p-menuitem-link, .p-icon, .p-submenu-icon{
     font-size: 1rem;
     font-weight: 600;
@@ -41,7 +59,7 @@
     color: #222588;
   }
   
-  .p-menuitem-text:hover{
+  .p-menuitem-text:hover, .p-menuitem-link:hover{
     color: #222588;
   }
   
