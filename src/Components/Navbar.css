@@ -1,72 +1,71 @@
-*{
-    color: black;
-    background-color: transparent;
-    box-shadow: none;
-    margin: 0;
-  }
-  
-  .p-menubar{
-    padding: 5px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border: 0;
-  }
+* {
+  margin: 0;
+  background-color: transparent;
+  box-shadow: none;
+  color: black;
+  border: none;
+}
 
-  .img-class{
-    width:100%;
-    max-width: 7rem;
-    margin-left: 20%;
-    padding: .5rem;
-  }
-  
-  .menu-wrapper{
-    border-radius: 50px;
-    background-color: #e2e0df;
-    margin-top: .6rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
+.p-menubar {
+  padding: 0.3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .p-menuitem .p-submenu-list {
-    background-color: #007bff; /* Blue box */
-    padding: 0.5rem 0; /* optional - padding inside */
-    border-radius: 0.5rem; /* optional - smooth corners */
-  }
-  
-  /* Style each item inside the dropdown */
-  .p-submenu-list .p-menuitem-link {
-    color: black; /* black text */
-    font-weight: 500;
-  }
-  
-  /* Hover effect for submenu items */
-  .p-submenu-list .p-menuitem-link:hover {
-    background-color: #0056b3; /* darker blue when hover */
-    color: white; /* text becomes white when hover */
-  }
+.img-class {
+  height: 30px;
+  width: 100%;
+  margin-left:1.5rem;
+}
 
-  .mx-2, .p-menuitem-link, .p-icon, .p-submenu-icon{
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  
-  .p-menuitem-text{
-    border-radius: 6px;
-  }
-  
-  .mx-2:hover{
-    color: #222588;
-  }
-  
-  .p-menuitem-text:hover, .p-menuitem-link:hover{
-    color: #222588;
-  }
-  
-  .p-icon:hover{
-    color: #222588;
-  } 
-  
-  .p-submenu-icon:hover{
-    color: #222588;
-  }
+.menu-wrapper {
+  border-radius: 50px;
+  background-color: #e2e0df;
+  margin: 0.5rem 1rem 0 1rem;
+}
+
+.p-menubar-root-list{
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.p-menuitem-link {
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+
+.p-menuitem-link.clicked {
+  background : linear-gradient(90deg, #1683e0, #1381e0, #0d7ddf, #0776de, #0b6edb, #1864d8, #2559d4, #324ecf, #3d42c9, #4538c4, #4a31c0, #4c2ebf);
+  color: white;
+  border-radius: 5rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+}
+
+.p-menuitem-link.clicked:hover{
+  color: white;
+}
+
+.p-submenu-list {
+  background-color: #96b1ce;
+  margin-left: 1rem; 
+  padding: 0.5rem;
+  border-radius: 0.9rem;
+}
+
+.p-icon,
+.p-submenu-icon {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.p-icon:hover,
+.p-submenu-icon:hover,
+.p-menuitem-link:hover {
+  color: #222588;
+}

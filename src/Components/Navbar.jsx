@@ -1,33 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import { Menubar } from "primereact/menubar";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function TemplateDemo() {
-  const itemRenderer = (item) => (
-    <a className="flex align-items-center p-menuitem-link">
-      <span className="mx-2">{item.label}</span>
-    </a>
-  );
+  
+  const [activeItem, setActiveItem] = useState(null);
 
   const items = [
     {
       label: "About Us",
-      template: ()=>(<Link to="/AboutUs" className="p-menuitem-link">About Us</Link>),
+      template: () => (
+        <Link
+          to="/AboutUs"
+          className={`p-menuitem-link ${activeItem === "About Us" ? "clicked" : ""}`}
+          onClick={() => setActiveItem("About Us")}
+        >
+          About Us
+        </Link>
+      ),
     },
     {
       label: "Leadership",
-      template: ()=><Link to="/Leadership" className="p-menuitem-link">Leadership</Link>,
+      template: () => (
+        <Link
+          to="/Leadership"
+          className={`p-menuitem-link ${activeItem === "Leadership" ? "clicked" : ""}`}
+          onClick={() => setActiveItem("Leadership")}
+        >
+          Leadership
+        </Link>
+      ),
     },
     {
       label: "Solutions",
-      template: ()=>(
-        <div className="pi pi-angle-down ml-2">
-          <Link to="/Solutions" className="p-menuitem-link">
-            Solutions
-          </Link>
-        </div>
+      template: () => (
+        <Link
+          to="Solutions"
+          className={`p-menuitem-link ${activeItem === "Solutions" ? "clicked" : ""}`}
+          onClick={() => setActiveItem("Solutions")}
+        >
+          Solutions
+        </Link>
       ),
       items: [
         {
@@ -35,29 +50,68 @@ export default function TemplateDemo() {
           items: [
             {
               label: "ADAMS",
-              template: itemRenderer,
+              template: () => (
+                <Link
+                  to="Adams"
+                  className={`p-menuitem-link ${activeItem === "ADAMS" ? "clicked" : ""}`}
+                  onClick={() => setActiveItem("Solutions")}
+                >
+                  ADAMS
+                </Link>
+              ),
             },
             {
               label: "ALPS",
-              template: itemRenderer,
+              template: () => (
+                <Link
+                  to="Alps"
+                  className={`p-menuitem-link ${activeItem === "ALPS" ? "clicked" : ""}`}
+                  onClick={() => setActiveItem("Solutions")}
+                >
+                  ALPS
+                </Link>
+              ),
             },
             {
               label: "DENALI",
-              template: itemRenderer,
+              template: () => (
+                <Link
+                  to="Denali"
+                  className={`p-menuitem-link ${activeItem === "DENALI" ? "clicked" : ""}`}
+                  onClick={() => setActiveItem("Solutions")}
+                >
+                  DENALI
+                </Link>
+              ),
             },
           ],
         },
         {
           label: "Fintech",
-          icon: "pi pi-history",
           items: [
             {
               label: "AI Driven Collections",
-              template: itemRenderer,
+              template: () => (
+                <Link
+                  to="Collections"
+                  className={`p-menuitem-link ${activeItem === "AI Driven Collections" ? "clicked" : ""}`}
+                  onClick={() => setActiveItem("Solutions")}
+                >
+                  AI Driven Collections
+                </Link>
+              ),
             },
             {
               label: "AI Driven Lending",
-              template: itemRenderer,
+              template: () => (
+                <Link
+                  to="Lending"
+                  className={`p-menuitem-link ${activeItem === "AI Driven Lending" ? "clicked" : ""}`}
+                  onClick={() => setActiveItem("Solutions")}
+                >
+                  AI Driven Lending
+                </Link>
+              ),
             },
           ],
         },
@@ -65,33 +119,73 @@ export default function TemplateDemo() {
     },
     {
       label: "Services",
-      template: itemRenderer,
+      template: () => (
+        <Link
+          to="Services"
+          className={`p-menuitem-link ${activeItem === "Services" ? "clicked" : ""}`}
+          onClick={() => setActiveItem("Services")}
+        >
+          Services
+        </Link>
+      ),
     },
     {
       label: "Strategic Investments",
-      template: itemRenderer,
+      template: () => (
+        <Link
+          to="StrategicInvestments"
+          className={`p-menuitem-link ${activeItem === "Strategic Investments" ? "clicked" : ""}`}
+          onClick={() => setActiveItem("Strategic Investments")}
+        >
+          Strategic Investments
+        </Link>
+      ),
     },
     {
       label: "Media",
-      template: itemRenderer,
+      template: () => (
+        <Link
+          to="Media"
+          className={`p-menuitem-link ${activeItem === "Media" ? "clicked" : ""}`}
+          onClick={() => setActiveItem("Media")}
+        >
+          Media
+        </Link>
+      ),
     },
     {
       label: "Careers",
-      template: itemRenderer,
+      template: () => (
+        <Link
+          to="Careers"
+          className={`p-menuitem-link ${activeItem === "Careers" ? "clicked" : ""}`}
+          onClick={() => setActiveItem("Careers")}
+        >
+          Careers
+        </Link>
+      ),
     },
     {
       label: "Contact Us",
-      template: itemRenderer,
+      template: () => (
+        <Link
+          to="ContactUs"
+          className={`p-menuitem-link ${activeItem === "Contact Us" ? "clicked" : ""}`}
+          onClick={() => setActiveItem("Contact Us")}
+        >
+          Contact Us
+        </Link>
+      ),
     },
   ];
 
   const start = (
     <Link to="/">
-    <img
-      className="img-class"
-      alt="logo"
-      src="https://www.tvsd.ai/-/media/TVSD/Logo/tvs-digital-logo.svg?la=en&hash=20689CEB7BFC28822AAFE610275691E4"
-    />
+      <img
+        className="img-class"
+        alt="logo"
+        src="https://www.tvsd.ai/-/media/TVSD/Logo/tvs-digital-logo.svg?la=en&hash=20689CEB7BFC28822AAFE610275691E4"
+      />
     </Link>
   );
 
