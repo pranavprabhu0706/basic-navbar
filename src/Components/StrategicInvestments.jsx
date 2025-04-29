@@ -1,4 +1,6 @@
 import React from 'react'
+import './fonts.css'
+
 
 const StrategicInvestments = () => {
   return (
