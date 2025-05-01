@@ -4,6 +4,10 @@
   box-shadow: none;
   color: black;
   border: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .p-menubar {
@@ -26,18 +30,40 @@
   margin: 0.5rem 1rem 0 1rem;
 }
 
-.p-menubar-root-list{
+.p-menubar-root-list::before{
   margin-right: 2rem;
   margin-left: 2rem;
 }
 
+.p-menuitem-text{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.p-menuitem-content{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .p-menuitem-link {
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   display: inline-block;
 }
 
+.p-submenu-list:hover .p-menuitem-link:hover{
+  border: 2px;
+  background-color: rgb(255, 255, 255);
+}
+
+.menu-wrapper, .p-menubar, .p-menubar-root-list{
+  background-color: #e2e0df;
+  border-radius: 30px;
+}
 
 .p-menuitem-link.clicked {
   background : linear-gradient(90deg, #1683e0, #1381e0, #0d7ddf, #0776de, #0b6edb, #1864d8, #2559d4, #324ecf, #3d42c9, #4538c4, #4a31c0, #4c2ebf);
@@ -51,11 +77,18 @@
   color: white;
 }
 
-.p-submenu-list {
+.p-submenu-list{
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #96b1ce;
-  margin-left: 1rem; 
   padding: 0.5rem;
   border-radius: 0.9rem;
+}
+
+.p-menuitem-content .p-submenu-list{
+  margin: 2rem;
 }
 
 .p-icon,
@@ -66,6 +99,7 @@
 
 .p-icon:hover,
 .p-submenu-icon:hover,
-.p-menuitem-link:hover {
+.p-menuitem-link:hover,
+.p-menuitem-text:hover {
   color: #222588;
 }

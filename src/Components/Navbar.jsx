@@ -180,7 +180,7 @@ export default function TemplateDemo() {
   ];
 
   const start = (
-    <Link to="/">
+    <Link to="/" onClick={() => setActiveItem(null)}>
       <img
         className="img-class"
         alt="logo"
@@ -190,8 +190,10 @@ export default function TemplateDemo() {
   );
 
   return (
-    <div className="menu-wrapper">
-      <Menubar model={items} start={start} />
-    </div>
+      <div className="navbar-container">
+        <div className="menu-wrapper">
+          <Menubar model={items} start={start} />
+        </div>
+      </div>
   );
 }
