@@ -1,8 +1,9 @@
 import React from 'react'
+import './fonts.css'
 
 const Home = () => {
   return (
-    <div>This is your Home Page</div>
+    <div className='sub-content'>This is your "Home" Page</div>
   )
 }
 

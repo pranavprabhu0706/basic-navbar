@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import { Menubar } from "primereact/menubar";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function TemplateDemo() {
-  
   const [activeItem, setActiveItem] = useState(null);
+
+  useEffect(() => {
+    const storedItem = localStorage.getItem("activeMenuItem");
+    if (storedItem) {
+      setActiveItem(storedItem);
+    }
+  }, []);
+
+  const handleItemClick = (itemName) => {
+    setActiveItem(itemName);
+    localStorage.setItem("activeMenuItem", itemName);
+  };
 
   const items = [
     {
@@ -15,7 +26,7 @@ export default function TemplateDemo() {
         <Link
           to="/AboutUs"
           className={`p-menuitem-link ${activeItem === "About Us" ? "clicked" : ""}`}
-          onClick={() => setActiveItem("About Us")}
+          onClick={() => handleItemClick("About Us")}
         >
           About Us
         </Link>
@@ -27,7 +38,7 @@ export default function TemplateDemo() {
         <Link
           to="/Leadership"
           className={`p-menuitem-link ${activeItem === "Leadership" ? "clicked" : ""}`}
-          onClick={() => setActiveItem("Leadership")}
+          onClick={() => handleItemClick("Leadership")}
         >
           Leadership
         </Link>
@@ -39,7 +50,7 @@ export default function TemplateDemo() {
         <Link
           to="Solutions"
           className={`p-menuitem-link ${activeItem === "Solutions" ? "clicked" : ""}`}
-          onClick={() => setActiveItem("Solutions")}
+          onClick={() => handleItemClick("Solutions")}
         >
           Solutions
         </Link>
@@ -54,7 +65,7 @@ export default function TemplateDemo() {
                 <Link
                   to="Adams"
                   className={`p-menuitem-link ${activeItem === "ADAMS" ? "clicked" : ""}`}
-                  onClick={() => setActiveItem("Solutions")}
+                  onClick={() => handleItemClick("Solutions")}
                 >
                   ADAMS
                 </Link>
@@ -66,7 +77,7 @@ export default function TemplateDemo() {
                 <Link
                   to="Alps"
                   className={`p-menuitem-link ${activeItem === "ALPS" ? "clicked" : ""}`}
-                  onClick={() => setActiveItem("Solutions")}
+                  onClick={() => handleItemClick("Solutions")}
                 >
                   ALPS
                 </Link>
@@ -78,7 +89,7 @@ export default function TemplateDemo() {
                 <Link
                   to="Denali"
                   className={`p-menuitem-link ${activeItem === "DENALI" ? "clicked" : ""}`}
-                  onClick={() => setActiveItem("Solutions")}
+                  onClick={() => handleItemClick("Solutions")}
                 >
                   DENALI
                 </Link>
@@ -95,7 +106,7 @@ export default function TemplateDemo() {
                 <Link
                   to="Collections"
                   className={`p-menuitem-link ${activeItem === "AI Driven Collections" ? "clicked" : ""}`}
-                  onClick={() => setActiveItem("Solutions")}
+                  onClick={() => handleItemClick("Solutions")}
                 >
                   AI Driven Collections
                 </Link>
@@ -107,7 +118,7 @@ export default function TemplateDemo() {
                 <Link
                   to="Lending"
                   className={`p-menuitem-link ${activeItem === "AI Driven Lending" ? "clicked" : ""}`}
-                  onClick={() => setActiveItem("Solutions")}
+                  onClick={() => handleItemClick("Solutions")}
                 >
                   AI Driven Lending
                 </Link>
@@ -123,7 +134,7 @@ export default function TemplateDemo() {
         <Link
           to="Services"
           className={`p-menuitem-link ${activeItem === "Services" ? "clicked" : ""}`}
-          onClick={() => setActiveItem("Services")}
+          onClick={() => handleItemClick("Services")}
         >
           Services
         </Link>
@@ -135,7 +146,7 @@ export default function TemplateDemo() {
         <Link
           to="StrategicInvestments"
           className={`p-menuitem-link ${activeItem === "Strategic Investments" ? "clicked" : ""}`}
-          onClick={() => setActiveItem("Strategic Investments")}
+          onClick={() => handleItemClick("Strategic Investments")}
         >
           Strategic Investments
         </Link>
@@ -147,7 +158,7 @@ export default function TemplateDemo() {
         <Link
           to="Media"
           className={`p-menuitem-link ${activeItem === "Media" ? "clicked" : ""}`}
-          onClick={() => setActiveItem("Media")}
+          onClick={() => handleItemClick("Media")}
         >
           Media
         </Link>
@@ -159,7 +170,7 @@ export default function TemplateDemo() {
         <Link
           to="Careers"
           className={`p-menuitem-link ${activeItem === "Careers" ? "clicked" : ""}`}
-          onClick={() => setActiveItem("Careers")}
+          onClick={() => handleItemClick("Careers")}
         >
           Careers
         </Link>
@@ -171,7 +182,7 @@ export default function TemplateDemo() {
         <Link
           to="ContactUs"
           className={`p-menuitem-link ${activeItem === "Contact Us" ? "clicked" : ""}`}
-          onClick={() => setActiveItem("Contact Us")}
+          onClick={() => handleItemClick("Contact Us")}
         >
           Contact Us
         </Link>
@@ -180,7 +191,10 @@ export default function TemplateDemo() {
   ];
 
   const start = (
-    <Link to="/" onClick={() => setActiveItem(null)}>
+    <Link to="/Home" onClick={() => {
+      setActiveItem(null);
+      localStorage.removeItem("activeMenuItem");
+    }}>
       <img
         className="img-class"
         alt="logo"
@@ -190,10 +204,10 @@ export default function TemplateDemo() {
   );
 
   return (
-      <div className="navbar-container">
-        <div className="menu-wrapper">
-          <Menubar model={items} start={start} />
-        </div>
+    <div className="navbar-container">
+      <div className="menu-wrapper">
+        <Menubar model={items} start={start} />
       </div>
+    </div>
   );
 }
